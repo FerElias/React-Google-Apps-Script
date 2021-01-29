@@ -1,26 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import './Abous.css'
+import SlideEditor from './SlideEditor'
+import Button from '@material-ui/core/Button';
+import server from '../../utils/server';
 
-const About = () => (
-  <div>
-    <p>
-      <b>☀️ React app inside a sidebar! ☀️</b>
-    </p>
-    <p>
-      This is a very simple page demonstrating how to build a React app inside a
-      sidebar.
-    </p>
-    <p>
-      Visit the Github repo for more information on how to use this project.
-    </p>
-    <p>- Elisha Nuchi</p>
-    <a
-      href="https://www.github.com/enuchi/React-Google-Apps-Script"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      React + Google Apps Script
-    </a>
-  </div>
-);
+
+
+const { serverFunctions } = server;
+
+
+
+
+const About = () => {
+
+  const [slides, setSlide] = useState([]);
+
+
+  const openDialog = () => {
+    serverFunctions
+      .openDialog()
+      .then(setSlide)
+      .catch(alert);
+  };
+
+  return (
+
+    <div>
+      <nav className="header"><h1>React App</h1></nav>
+
+      <h1>React App</h1>
+
+      <Button style={{
+
+        backgroundColor: "#1378f3",
+
+      }}
+        onClick={openDialog} >Create New Lesson</Button>
+      <h2>Hello react</h2>
+
+
+    </div>
+
+  )
+
+}
+
+
 
 export default About;

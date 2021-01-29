@@ -1,0 +1,17 @@
+.header {
+  background-color:rgb(16, 120, 243);
+  height: 40px;
+  margin-top: -20px;
+  margin-left: -10px;
+  width: 100%;
+
+
+}
+
+.header > h1 {
+  color: white;
+  align-content: center;
+  margin-left: 10px;
+  
+}
+

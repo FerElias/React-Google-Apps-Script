@@ -1,12 +1,27 @@
 import * as publicUiFunctions from './ui';
-import * as publicSheetFunctions from './sheets';
+import * as publicSheetFunctions from './sheets'
+import * as publicSlideFunctions from './slides'
+
 
 // Expose public functions by attaching to `global`
 global.onOpen = publicUiFunctions.onOpen;
 global.openDialog = publicUiFunctions.openDialog;
 global.openDialogBootstrap = publicUiFunctions.openDialogBootstrap;
 global.openAboutSidebar = publicUiFunctions.openAboutSidebar;
+
 global.getSheetsData = publicSheetFunctions.getSheetsData;
 global.addSheet = publicSheetFunctions.addSheet;
 global.deleteSheet = publicSheetFunctions.deleteSheet;
 global.setActiveSheet = publicSheetFunctions.setActiveSheet;
+
+global.getSlidesData = publicSlideFunctions.getSlidesData;
+global.addSheet = publicSlideFunctions.addSlide;
+global.deleteSlide = publicSlideFunctions.deleteSlide;
+global.setActiveSlide = publicSlideFunctions.setActiveSlide;
+global.newSlide = publicSlideFunctions.newSlide;
+global.createShape = publicSlideFunctions.createShape;
+
+
+global.insertChart = publicSlideFunctions.insertChart;
+
+
